@@ -1,13 +1,12 @@
 {
-  "name": "Mats Hub",
+  "name": "Hub",
   "short_name": "Hub",
-  "description": "Persönlicher Hub für Ideen, Roadmap und eigene Tools.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#11131a",
-  "theme_color": "#11131a",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
-    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }
   ]
 }
