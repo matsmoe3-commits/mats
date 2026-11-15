@@ -1,8 +1,9 @@
 // Alle Tools des Hubs. Ein neues Tool ist eine Datei in diesem Ordner, die ein Objekt
-// { id, name, description, render(view, routeParts), count?() } exportiert – hier eintragen, fertig.
+// { id, name, icon, description, render(view, routeParts), count?() } exportiert – hier eintragen, fertig.
 import ideas from './ideas.js';
 import roadmap from './roadmap.js';
 import projects from './projects.js';
+import contacts from './contacts.js';
 import settings from './settings.js';
 
-export const tools = [ideas, roadmap, projects, settings];
+export const tools = [ideas, roadmap, projects, contacts, settings];

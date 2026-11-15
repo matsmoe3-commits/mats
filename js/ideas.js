@@ -64,7 +64,7 @@ export function openEditor(id) {
 
       <div class="field" data-link-field>
         <label class="label" for="link">Link</label>
-        <input id="link" name="link" type="url" value="${esc(idea.link)}" placeholder="https://">
+        <input id="link" name="link" inputmode="url" value="${esc(idea.link)}" placeholder="https://">
       </div>
 
       <div class="actions">

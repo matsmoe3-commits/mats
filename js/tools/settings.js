@@ -1,5 +1,6 @@
 // Einstellungen: Backup und optionaler Sync zwischen Geräten.
-import { store, sync, exportJSON, importJSON } from '../store.js';
+import { sync, exportJSON, importJSON } from '../store.js';
+import { icons } from '../icons.js';
 import { esc, toast, fmtDate } from '../ui.js';
 
 function render(view) {
@@ -61,6 +62,7 @@ function render(view) {
 export default {
   id: 'settings',
   name: 'Einstellungen',
+  icon: icons.settings,
   description: 'Backup und Sync.',
   render,
 };

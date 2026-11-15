@@ -36,10 +36,10 @@ function migrate(d) {
   return d;
 }
 
-function persist({ silent = false } = {}) {
+function persist() {
   data.updatedAt = new Date().toISOString();
   localStorage.setItem(KEY, JSON.stringify(data));
-  if (!silent) listeners.forEach((fn) => fn(data));
+  listeners.forEach((fn) => fn(data));
   if (!suppressPush) scheduleAutoPush();
 }
 
@@ -63,6 +63,21 @@ export const store = {
     list.unshift(created);
     persist();
     return created;
+  },
+  // Viele Einträge auf einmal speichern (z. B. beim Import) – nur ein Speichervorgang.
+  upsertMany(collection, items) {
+    const list = this.all(collection);
+    const byId = new Map(list.map((x, n) => [x.id, n]));
+    const now = new Date().toISOString();
+    for (const item of items) {
+      const n = byId.get(item.id);
+      if (n != null) list[n] = { ...list[n], ...item, updatedAt: now };
+      else {
+        if (item.id) delete data.deleted[item.id]; // erneut importiert → nicht mehr als gelöscht markieren
+        list.push({ ...item, id: item.id || uid(), createdAt: now, updatedAt: now });
+      }
+    }
+    persist();
   },
   remove(collection, id) {
     data.collections[collection] = this.all(collection).filter((x) => x.id !== id);

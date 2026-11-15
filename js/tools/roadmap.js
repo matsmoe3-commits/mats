@@ -1,5 +1,6 @@
 // Roadmap: nur die Ideen, die umgesetzt werden sollen – mit ihren Schritten.
 import { esc } from '../ui.js';
+import { icons } from '../icons.js';
 import { byStatus, get, save, openEditor, progress } from '../ideas.js';
 
 // Reihenfolge per "rank" (kleiner = weiter oben), sonst nach Erstellungsdatum.
@@ -17,6 +18,7 @@ function moveUp(id) {
 export default {
   id: 'roadmap',
   name: 'Roadmap',
+  icon: icons.roadmap,
   description: 'Was umgesetzt werden soll, in Reihenfolge.',
   count: () => byStatus('planned').length,
   render(view) {

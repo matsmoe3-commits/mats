@@ -1,5 +1,6 @@
 // Ideen: alles festhalten, später entscheiden.
 import { esc } from '../ui.js';
+import { icons } from '../icons.js';
 import { all, add, openEditor, STATUS, progress, get } from '../ideas.js';
 
 const state = { q: '', filter: 'all' };
@@ -30,10 +31,14 @@ function renderList(el) {
 export default {
   id: 'ideas',
   name: 'Ideen',
+  icon: icons.ideas,
   description: 'Gedanken zu zukünftigen Projekten sammeln.',
   count: () => all().length,
   render(view, [id]) {
-    if (id && get(id)) setTimeout(() => openEditor(id));
+    if (id && get(id)) {
+      history.replaceState(null, '', '#/ideas'); // sonst öffnet jedes Neuzeichnen den Dialog erneut
+      setTimeout(() => openEditor(id));
+    }
     const counts = { all: all().length };
     for (const k of Object.keys(STATUS)) counts[k] = all().filter((i) => i.status === k).length;
 

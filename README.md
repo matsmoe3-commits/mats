@@ -1,13 +1,25 @@
-# Hub
+# Mats Hub
 
 Persönlicher Hub für Ideen, Roadmap und eigene Tools. Eine schlichte Web-App ohne Build-Schritt und ohne Abhängigkeiten. Sie läuft im Browser auf PC und Handy und lässt sich auf dem Handy zum Startbildschirm hinzufügen.
 
-## Bereiche
+Die Startseite zeigt alle Tools als runde Icons. Geplante Vorhaben erscheinen dort als gestrichelte Kreise. Oben rechts filterst du zwischen *Alle*, *Tools* und *Geplant* und kommst zu den Einstellungen.
+
+## Tools
 
 - **Ideen**: Gedanken festhalten. Jede Idee hat einen von drei Status: *Idee*, *Geplant* oder *Fertig*. Eine Idee muss nie umgesetzt werden.
 - **Roadmap**: Nur Ideen mit dem Status *Geplant*, in Reihenfolge und mit abhakbaren Schritten.
 - **Projekte**: Ideen mit dem Status *Fertig*, mit Link zum Öffnen.
+- **Kontakte**: Liest deinen LinkedIn-Datenexport ein und gleicht deine Kontakte mit deinen eigenen Stationen ab. So siehst du, wer schon bei denselben Firmen war wie du. Kontakte lassen sich als *Kollege* oder *Interessant* markieren und mit Notizen versehen.
 - **Einstellungen**: Backup als Datei und optionaler Sync über ein privates GitHub-Repo.
+
+## Kontakte und LinkedIn
+
+LinkedIn bietet Privatpersonen keine Schnittstelle zu den eigenen Kontakten. Automatisiertes Auslesen der Website verstößt gegen die Nutzungsbedingungen. Grundlage ist deshalb der offizielle Datenexport:
+
+1. Auf LinkedIn unter *Einstellungen → Datenschutz → Kopie Ihrer Daten anfordern* „Kontakte“ und „Positionen“ anfordern.
+2. Die ZIP-Datei aus der E-Mail unter *Kontakte → Importieren* auswählen. Entpacken ist nicht nötig, und die Datei wird nur lokal im Browser gelesen.
+
+Der Export enthält von jedem Kontakt nur die **aktuelle** Firma. Damit trotzdem ein Lebenslauf entsteht, gleicht jeder weitere Import den alten Stand ab: Hat jemand die Firma gewechselt, wandert die alte Firma in die Historie. Frühere Firmen lassen sich außerdem von Hand ergänzen. Je regelmäßiger du importierst, desto vollständiger wird das Bild.
 
 ## Starten
 
@@ -17,8 +29,22 @@ Online: Den Branch nach `main` mergen und unter *Settings → Pages → Source* 
 
 ## Daten
 
-Die Daten liegen im Browser (localStorage), nicht im Repo. Unter *Einstellungen* kannst du sie exportieren. Wenn du mehrere Geräte nutzt, kannst du dort auch den Sync über ein privates GitHub-Repo einrichten.
+Alle Daten liegen im Browser (localStorage), nicht im Repo. Das gilt auch für Kontakte. Unter *Einstellungen* lassen sie sich exportieren oder per GitHub-Sync zwischen Geräten abgleichen. Nimm dafür ein **privates** Repo.
+
+## Aufbau
+
+```
+index.html             App-Hülle
+css/style.css          Design (hell/dunkel automatisch)
+js/app.js              Kopfzeile, Startseite, Router
+js/store.js            Datenspeicher, Export/Import, Sync
+js/ideas.js            Ideen: Datenmodell + Bearbeitungsdialog
+js/linkedin.js         LinkedIn-Export lesen (CSV/ZIP) und abgleichen
+js/icons.js            Icons und Logo
+js/seed.js             Ideen, die der Hub einmalig mitbringt
+js/tools/              ein Modul pro Tool + index.js (Registry)
+```
 
 ## Neues Tool hinzufügen
 
-Lege eine Datei in `js/tools/` an, die ein Objekt `{ id, name, description, render(view), count?() }` exportiert, und trage sie in `js/tools/index.js` ein. Daten speicherst du mit `store.all('<id>')` und `store.upsert('<id>', item)` aus `js/store.js`.
+Lege eine Datei in `js/tools/` an, die ein Objekt `{ id, name, icon, description, render(view), count?() }` exportiert, und trage sie in `js/tools/index.js` ein. Danach erscheint das Tool als Icon auf der Startseite. Daten speicherst du mit `store.all('<id>')`, `store.upsert('<id>', item)` und `store.upsertMany('<id>', items)` aus `js/store.js`.
