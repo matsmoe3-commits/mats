@@ -19,7 +19,7 @@ export const logo = `
   <g stroke="var(--logo-fg, #fff)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
     <path d="M19 43V22l13 14 13-14v21"/>
   </g>
-  <g fill="var(--logo-fg, #fff)">
+  <g fill="var(--logo-dot, #c4b5f4)">
     <circle cx="19" cy="43" r="3.6"/><circle cx="19" cy="22" r="3.6"/><circle cx="32" cy="36" r="3.6"/>
     <circle cx="45" cy="22" r="3.6"/><circle cx="45" cy="43" r="3.6"/>
   </g>

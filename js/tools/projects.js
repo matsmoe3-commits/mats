@@ -13,7 +13,6 @@ export default {
     const list = byStatus('done').sort((a, b) => (b.doneAt || '').localeCompare(a.doneAt || ''));
     view.innerHTML = `
       <h1>Projekte</h1>
-      <p class="lead">Ideen mit dem Status „Fertig“. Mit Link lassen sie sich direkt öffnen.</p>
       ${list.length ? `<ul class="list">${list.map((i) => `
         <li><div class="row">
           <button class="row-title" data-id="${i.id}">${esc(i.title)}</button>

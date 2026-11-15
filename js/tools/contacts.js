@@ -39,7 +39,7 @@ function renderList(el) {
     .sort((a, b) => fullName(a).localeCompare(fullName(b), 'de'));
   if (!list.length) {
     el.innerHTML = `<p class="empty">${state.tab === 'colleagues' && !positions().length
-      ? 'Trag unter „Meine Stationen“ ein, wo du gearbeitet hast – dann erscheinen hier passende Kontakte.'
+      ? 'Trag unter „Meine Stationen“ ein, wo du gearbeitet hast. Dann tauchen hier die passenden Leute auf.'
       : 'Keine Kontakte in dieser Ansicht.'}</p>`;
     return;
   }
@@ -49,7 +49,7 @@ function renderList(el) {
         <span class="row-sub">${esc([c.position, c.company].filter(Boolean).join(' · '))}</span></span>
       <span class="row-meta">${meta(c)}</span>
     </button></li>`).join('')}</ul>
-    ${list.length > LIMIT ? `<p class="hint">${list.length - LIMIT} weitere – nutze die Suche.</p>` : ''}`;
+    ${list.length > LIMIT ? `<p class="hint">Noch ${list.length - LIMIT} weitere. Die findest du über die Suche.</p>` : ''}`;
 }
 
 // ---------- Dialoge ----------
@@ -60,9 +60,9 @@ function openImport() {
     <ol class="howto">
       <li>Auf LinkedIn: <em>Einstellungen → Datenschutz → Kopie Ihrer Daten anfordern</em>.</li>
       <li>„Kontakte“ und „Positionen“ auswählen (oder das komplette Archiv) und anfordern.</li>
-      <li>Die ZIP-Datei aus der E-Mail von LinkedIn hier auswählen – entpacken ist nicht nötig.</li>
+      <li>Die ZIP-Datei aus der Mail von LinkedIn hier auswählen. Entpacken musst du nichts.</li>
     </ol>
-    <p class="hint">Die Datei wird nur hier im Browser gelesen und nirgendwohin hochgeladen. Wiederholte Importe ergänzen den Stand: neue Kontakte kommen dazu, Firmenwechsel landen in der Historie.</p>
+    <p class="hint">Die Datei bleibt auf deinem Gerät. Jeder neue Import ergänzt die Liste und merkt sich, wer die Firma gewechselt hat.</p>
     <div class="actions">
       <span></span>
       <div>
@@ -103,7 +103,7 @@ function openPositions() {
   const list = structuredClone(positions());
   modal(`
     <h2>Meine Stationen</h2>
-    <p class="hint">Hier wird abgeglichen, wer schon bei denselben Firmen war. Wird beim Import aus Positions.csv übernommen, lässt sich aber auch von Hand pflegen.</p>
+    <p class="hint">Damit wird abgeglichen, wer bei denselben Firmen war wie du. Kommt beim Import automatisch mit, du kannst aber auch selbst etwas eintragen.</p>
     <ul class="steps" data-list></ul>
     <form class="inline-form" data-add>
       <input name="company" placeholder="Firma" required>
@@ -246,7 +246,6 @@ export default {
 
     view.innerHTML = `
       <h1>Kontakte</h1>
-      <p class="lead">Wer aus deinem Netzwerk schon dort gearbeitet hat, wo du warst – und wen du dir merken willst.</p>
       <div class="toolbar">
         <button class="btn" data-import>Importieren</button>
         <button class="btn secondary" data-positions>Meine Stationen${positions().length ? ` (${positions().length})` : ''}</button>
@@ -261,7 +260,7 @@ export default {
           <input type="search" name="search" placeholder="Name oder Firma" value="${esc(state.q)}">
         </div>
         <div data-list></div>` : `
-        <p class="empty">Noch keine Kontakte. Importiere deinen LinkedIn-Export, um loszulegen.</p>`}`;
+        <p class="empty">Noch leer. Importier deinen LinkedIn-Export, dann geht’s los.</p>`}`;
 
     view.querySelector('[data-import]').onclick = openImport;
     view.querySelector('[data-positions]').onclick = openPositions;

@@ -25,7 +25,6 @@ export default {
     const list = planned();
     view.innerHTML = `
       <h1>Roadmap</h1>
-      <p class="lead">Nur Ideen mit dem Status „Geplant“. Alles andere darf einfach Idee bleiben.</p>
       ${list.length ? `<ol class="roadmap">${list.map((i, n) => `
         <li data-id="${i.id}">
           <div class="rm-head">

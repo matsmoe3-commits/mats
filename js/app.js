@@ -51,7 +51,8 @@ function renderHome() {
   }));
   const tiles = f === 'tools' ? toolTiles : f === 'planned' ? plannedTiles : [...toolTiles, ...plannedTiles];
 
-  view.innerHTML = tiles.length ? `
+  const today = new Date().toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long' });
+  view.innerHTML = `<p class="today">${today}</p>` + (tiles.length ? `
     <ul class="launcher">
       ${tiles.map((t) => `
         <li><a class="tile ${t.planned ? 'planned' : ''}" href="${t.href}">
@@ -59,7 +60,7 @@ function renderHome() {
           <span class="tile-label">${esc(t.label)}</span>
           ${t.sub ? `<span class="tile-sub">${esc(t.sub)}</span>` : ''}
         </a></li>`).join('')}
-    </ul>` : '<p class="empty center">Nichts in dieser Ansicht.</p>';
+    </ul>` : '<p class="empty">Hier ist gerade nichts.</p>');
 }
 
 function route() {

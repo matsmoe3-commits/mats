@@ -10,7 +10,7 @@ function render(view) {
 
     <section class="section">
       <h2>Backup</h2>
-      <p class="lead">Deine Daten liegen in diesem Browser. Exportiere sie ab und zu als Datei.</p>
+      <p class="lead">Alles liegt nur in diesem Browser. Ab und zu exportieren schadet nicht.</p>
       <div class="buttons">
         <button class="btn" data-export>Exportieren</button>
         <label class="btn secondary">Importieren<input type="file" accept=".json" data-import hidden></label>
@@ -19,7 +19,7 @@ function render(view) {
 
     <section class="section">
       <h2>Sync zwischen Geräten</h2>
-      <p class="lead">Optional. Speichert die Daten als Datei in einem privaten GitHub-Repo, damit Handy und PC denselben Stand haben.
+      <p class="lead">Wenn Handy und PC denselben Stand haben sollen: Die Daten landen dann als Datei in einem privaten GitHub-Repo.
         Dafür brauchst du einen <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Fine-grained Token</a>
         mit Zugriff nur auf dieses Repo und der Berechtigung „Contents: Read and write“.</p>
       <form class="form" data-sync>
