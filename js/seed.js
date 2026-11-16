@@ -198,6 +198,31 @@ const SEED = [
     ],
     link: '',
   },
+  {
+    id: 'seed-smart-home',
+    title: 'Smart Home anbinden',
+    status: 'idea',
+    notes: [
+      'Noch offen, was es mir genau bringt. Mögliche Nutzen:',
+      '',
+      '- Morgen-Briefing: „Draußen 4 Grad, die Heizung im Bad läuft schon.“ Hinweis auf offene Fenster.',
+      '- Kalender: früher Termin → früher hell und warm. Verreist → Heizung runter.',
+      '- Sprache über denselben Eingang: „Licht im Wohnzimmer aus“, „Bin in 20 Minuten zu Hause“.',
+      '- In der Stadt: mein Zuhause als eigenes Haus mit Überblick (alles aus? Fenster offen? Stromverbrauch).',
+      '- Lernen: Gewohnheiten erkennen und Abläufe vorschlagen, die ich bestätige.',
+      '- Sicherheit: Hinweis, wenn ich gehe und noch etwas an ist, oder bei Bewegung, während ich weg bin.',
+      '',
+      'Offene Fragen:',
+      '- Welches System und welche Geräte habe ich? Naheliegend: Apple Home (HomeKit), weil ich Apple nutze.',
+      '- Was davon will ich wirklich, was wäre nur Spielerei?',
+    ].join('\n'),
+    steps: [
+      { id: 's1', title: 'Geräte und System auflisten (Apple Home?)', done: false },
+      { id: 's2', title: 'Die zwei, drei nützlichsten Funktionen auswählen', done: false },
+      { id: 's3', title: 'Smart-Home-Status ins Morgen-Briefing bringen', done: false },
+    ],
+    link: '',
+  },
 ];
 
 export function applySeed() {
