@@ -26,6 +26,33 @@ const SEED = [
     ],
     link: '#/contacts',
   },
+  {
+    id: 'seed-stadt-menue',
+    title: 'Startseite als Stadt',
+    status: 'idea',
+    notes: [
+      'Die Startseite, auf der ich meine Tools auswähle, wird eine Stadt.',
+      'Gezeigt werden nur Gebäude, die eine echte Funktion haben. Jedes Gebäude ist ein Tool oder Agent.',
+      'Der Name steht direkt am Gebäude, zum Beispiel als Schild oder Leuchtschrift.',
+      'Beispiel: Das LinkedIn-Kontakte-Tool ist ein Hochhaus.',
+      'Der Stil soll eher realistisch sein, nicht comichaft.',
+      'Je mehr Agenten ich baue, desto mehr Gebäude kommen dazu. Die Stadt wächst mit.',
+      '',
+      'Offene Fragen:',
+      '- Welches Tool bekommt welchen Gebäudetyp (Hochhaus, Werkstatt, Bibliothek, Rathaus …)?',
+      '- Wie sieht ein geplantes Tool aus? Vielleicht als Baustelle mit Kran.',
+      '- Wie bleibt es auf dem Handy bedienbar?',
+      '- Welche Technik: gezeichnete Bilder, 3D-Szene oder isometrische Grafik?',
+    ].join('\n'),
+    steps: [
+      { id: 's1', title: 'Gebäudetyp pro Tool festlegen', done: false },
+      { id: 's2', title: 'Stil festlegen (Referenzbilder sammeln)', done: false },
+      { id: 's3', title: 'Technik wählen und Prototyp mit 2–3 Gebäuden bauen', done: false },
+      { id: 's4', title: 'Geplante Tools als Baustellen darstellen', done: false },
+      { id: 's5', title: 'Neue Tools erscheinen automatisch als neues Gebäude', done: false },
+    ],
+    link: '',
+  },
 ];
 
 export function applySeed() {
