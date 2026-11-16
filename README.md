@@ -1,6 +1,6 @@
 # Mats Hub
 
-> Für alles hier gelten die [Grundsätze](GRUNDSAETZE.md): nichts nach extern, nur ich komme rein, überall nutzbar, mega einfach.
+> Für alles hier gelten die [Grundsätze](GRUNDSAETZE.md): nur ich habe Zugriff, auf Laptop und Handy nutzbar, mega einfach.
 
 Persönlicher Hub für Ideen, Roadmap und eigene Tools. Eine schlichte Web-App ohne Build-Schritt und ohne Abhängigkeiten. Sie läuft im Browser auf PC und Handy und lässt sich auf dem Handy zum Startbildschirm hinzufügen.
 
@@ -27,7 +27,7 @@ Die Gebäude entstehen aus Code (`js/city/scene.js`), Three.js liegt in `vendor/
 - **Roadmap**: Nur Ideen mit dem Status *Geplant*, in Reihenfolge und mit abhakbaren Schritten.
 - **Projekte**: Ideen mit dem Status *Fertig*, mit Link zum Öffnen.
 - **Kontakte**: Liest deinen LinkedIn-Datenexport ein und gleicht deine Kontakte mit deinen eigenen Stationen ab. So siehst du, wer schon bei denselben Firmen war wie du. Kontakte lassen sich als *Kollege* oder *Interessant* markieren und mit Notizen versehen.
-- **Einstellungen**: Backup als Datei. Der GitHub-Sync dort ist eine Übergangslösung und sollte nicht eingeschaltet werden (siehe `GRUNDSAETZE.md`).
+- **Einstellungen**: Backup als Datei und optionaler Sync über ein **privates** GitHub-Repo. Der Sync wird später durch einen bequemeren Abgleich hinter dem Login ersetzt.
 
 ## Kontakte und LinkedIn
 
@@ -42,11 +42,11 @@ Der Export enthält von jedem Kontakt nur die **aktuelle** Firma. Damit trotzdem
 
 Lokal: `python3 -m http.server 8000` im Projektordner ausführen und <http://localhost:8000> öffnen.
 
-Online: Der Hub wird bewusst **nicht** öffentlich veröffentlicht. Wo er dauerhaft läuft (eigener Rechner mit Tailscale oder Cloudflare mit Login), ist noch offen, siehe `GRUNDSAETZE.md`.
+Online: Der Hub wird nie öffentlich veröffentlicht. Geplant ist Cloudflare Pages mit vorgeschaltetem Login (Cloudflare Access), sodass nur ich reinkomme, siehe `GRUNDSAETZE.md`.
 
 ## Daten
 
-Alle Daten liegen im Browser (localStorage), nicht im Repo. Das gilt auch für Kontakte. Unter *Einstellungen* lassen sie sich als Datei exportieren. Ein Abgleich zwischen Geräten kommt, sobald das Hosting entschieden ist, und dann nur Ende-zu-Ende-verschlüsselt.
+Alle Daten liegen im Browser (localStorage), nicht im Repo. Das gilt auch für Kontakte. Unter *Einstellungen* lassen sie sich als Datei exportieren oder über ein **privates** GitHub-Repo zwischen Geräten abgleichen.
 
 ## Aufbau
 

@@ -6,15 +6,14 @@ Persönlicher Hub von Mats. Sprache für Oberfläche, Commits und Antworten: Deu
 
 Lies `GRUNDSAETZE.md` vor jeder Änderung. Kurzfassung:
 
-1. **Nichts nach extern.** Keine Daten in lesbarer Form an fremde Server. Keine CDNs, Fonts, Analyse- oder Tracking-Dienste. Bibliotheken liegen in `vendor/`. Was doch extern liegen muss, nur Ende-zu-Ende-verschlüsselt.
-2. **Nur Mats kommt rein.** Nie öffentlich veröffentlichen (kein GitHub Pages, keine offenen Adressen). Keine Tokens oder Passwörter im Repo.
-3. **Überall nutzbar**, auf iPhone, Mac und Browser.
-4. **Mega einfach** zu bedienen. Sicherheit darf die Bedienung nicht verkomplizieren.
+1. **Nur Mats hat Zugriff.** Externe Dienste sind erlaubt (GitHub, Cloudflare, KI-Anbieter), aber nichts ist öffentlich. Kein GitHub Pages, keine Adresse ohne Login, Repos privat. Keine Tokens oder Passwörter im Repo.
+2. **Auf Laptop und iPhone nutzbar**, mit demselben Stand auf allen Geräten.
+3. **Mega einfach**: einmal anmelden, dann keine Technik mehr sehen.
 
-Neue Funktionen, die Daten nach außen schicken würden: vorher benennen und Mats fragen, nicht einfach einbauen.
+Neue Funktionen, die etwas öffentlich machen oder Dritten Zugriff geben könnten: vorher benennen und Mats fragen.
 
 ## Stil
 
 - Schlicht, wenig „KI-Look“: keine Emojis, keine Slogans, keine Gedankenstriche in UI-Texten. Akzentfarbe Helllila, sparsam einsetzen.
-- Kein Build-Schritt, reines HTML/CSS/JS mit ES-Modulen.
+- Kein Build-Schritt, reines HTML/CSS/JS mit ES-Modulen. Bibliotheken liegen in `vendor/`.
 - Ideen, die der Hub mitbringen soll, kommen in `js/seed.js` (werden einmalig pro ID angelegt).
