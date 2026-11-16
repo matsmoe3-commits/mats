@@ -67,8 +67,8 @@ const SEED = [
     steps: [
       { id: 's1', title: 'Gebäudetyp pro Tool zusammen festlegen', done: false },
       { id: 's2', title: 'Stil festlegen (Referenzbilder sammeln)', done: false },
-      { id: 's3', title: 'Prototyp in 3D mit 2–3 Gebäuden bauen', done: false },
-      { id: 's4', title: 'Geplante Tools als Baustelle mit Kran darstellen', done: false },
+      { id: 's3', title: 'Prototyp in 3D mit 2–3 Gebäuden bauen', done: true },
+      { id: 's4', title: 'Geplante Tools als Baustelle mit Kran darstellen', done: true },
       { id: 's5', title: 'Handy-Bedienung umsetzen (Straße zum Wischen + Liste)', done: false },
       { id: 's6', title: 'Neue Tools erscheinen automatisch als neues Gebäude', done: false },
     ],

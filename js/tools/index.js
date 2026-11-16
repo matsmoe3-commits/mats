@@ -5,5 +5,6 @@ import roadmap from './roadmap.js';
 import projects from './projects.js';
 import contacts from './contacts.js';
 import settings from './settings.js';
+import city from './city.js';
 
-export const tools = [ideas, roadmap, projects, contacts, settings];
+export const tools = [city, ideas, roadmap, projects, contacts, settings];

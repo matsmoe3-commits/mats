@@ -4,6 +4,21 @@ Persönlicher Hub für Ideen, Roadmap und eigene Tools. Eine schlichte Web-App o
 
 Die Startseite zeigt alle Tools als runde Icons. Geplante Vorhaben erscheinen dort als gestrichelte Kreise. Oben rechts filterst du zwischen *Alle*, *Tools* und *Geplant* und kommst zu den Einstellungen.
 
+## Stadt (Prototyp)
+
+Unter *Stadt* erscheinen die Tools als 3D-Gebäude in isometrischer Ansicht:
+
+| Tool | Gebäude |
+|---|---|
+| Kontakte | Hochhaus |
+| Ideen | Werkstatt mit Sheddach |
+| Roadmap | Rathaus mit Uhrturm |
+| Projekte | Museum |
+
+Geplante Vorhaben stehen als Baustelle mit Kran da. Gehört ein geplantes Vorhaben zu einem bestehenden Tool, steht der Kran neben dessen Gebäude. Abends leuchten die Fenster. Ein Tipp auf ein Gebäude holt es heran, ein zweiter Tipp öffnet das Tool.
+
+Die Gebäude entstehen aus Code (`js/city/scene.js`), Three.js liegt in `vendor/three/`. Es wird erst geladen, wenn die Stadt geöffnet wird.
+
 ## Tools
 
 - **Ideen**: Gedanken festhalten. Jede Idee hat einen von drei Status: *Idee*, *Geplant* oder *Fertig*. Eine Idee muss nie umgesetzt werden.
@@ -43,6 +58,8 @@ js/linkedin.js         LinkedIn-Export lesen (CSV/ZIP) und abgleichen
 js/icons.js            Icons und Logo
 js/seed.js             Ideen, die der Hub einmalig mitbringt
 js/tools/              ein Modul pro Tool + index.js (Registry)
+js/city/scene.js       3D-Stadt (Three.js)
+vendor/three/          Three.js (MIT-Lizenz), lokal statt über fremde Server
 ```
 
 ## Neues Tool hinzufügen

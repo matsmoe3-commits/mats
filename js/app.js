@@ -68,6 +68,7 @@ function route() {
   const tool = tools.find((t) => t.id === id);
   renderHeader(tool);
   document.title = tool ? `${tool.name} · Mats Hub` : 'Mats Hub';
+  document.body.dataset.route = tool?.id || 'home';
   if (tool) tool.render(view, rest); else renderHome();
 }
 
