@@ -67,6 +67,36 @@ const SEED = [
     ],
     link: '',
   },
+  {
+    id: 'seed-whatsapp-assistent',
+    title: 'WhatsApp-Assistent: wem sollte ich mal wieder schreiben?',
+    status: 'idea',
+    notes: [
+      'Ein Agent, der meine WhatsApp-Chats im Blick hat und mir sagt:',
+      '- wem ich mal wieder schreiben sollte, weil der letzte Kontakt lange her ist,',
+      '- wer mir wichtig ist (ich lege das fest, der Agent macht Vorschläge),',
+      '- welche Nachrichten ich noch nicht beantwortet habe.',
+      '',
+      'Was man wissen muss:',
+      '- WhatsApp hat für private Konten keine offizielle Schnittstelle. Die Business-API gilt nur für Firmennummern.',
+      '- Inoffizielle Werkzeuge, die WhatsApp Web fernsteuern, verstoßen gegen die Nutzungsbedingungen. Konten werden dafür gesperrt, im schlimmsten Fall mein privates.',
+      '- In den Chats stehen Nachrichten anderer Leute, die nicht zugestimmt haben. Deshalb: alles nur lokal auf meinem Gerät, nichts an fremde Server.',
+      '',
+      'Mögliche Wege:',
+      '- Chat-Export: WhatsApp kann einzelne Chats als Datei exportieren. Der Hub liest sie ein. Erlaubt und sicher, aber Handarbeit pro Chat.',
+      '- Nur Metadaten: Für die meisten Fragen reicht, wer wann zuletzt geschrieben hat. Der Inhalt muss gar nicht gespeichert werden.',
+      '- Manuelle Liste: wichtige Personen mit Wunsch-Rhythmus (z. B. alle 2 Wochen), der Hub erinnert. Ganz ohne WhatsApp-Zugriff.',
+      '',
+      'Passt gut zu den Kontakten: dieselben Personen, ein gemeinsames Profil.',
+    ].join('\n'),
+    steps: [
+      { id: 's1', title: 'Entscheiden, welcher Weg (Export, Metadaten, manuelle Liste)', done: false },
+      { id: 's2', title: 'Liste wichtiger Personen mit Wunsch-Rhythmus anlegen', done: false },
+      { id: 's3', title: 'Chat-Export einlesen und „unbeantwortet“ erkennen', done: false },
+      { id: 's4', title: 'Täglicher Hinweis: wem heute schreiben', done: false },
+    ],
+    link: '',
+  },
 ];
 
 export function applySeed() {
