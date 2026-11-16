@@ -357,6 +357,36 @@ const SEED = [
     ],
     link: '',
   },
+  {
+    id: 'seed-developer-agent',
+    title: 'Developer-Agent mit Skill-Experten',
+    status: 'idea',
+    notes: [
+      'Ein Developer-Agent, der den Hub selbst weiterbaut, und daneben ein Skill-Agent, der sehr viele Skills kennt und weiß, welcher für welche Aufgabe am besten funktioniert.',
+      '',
+      'Developer-Agent:',
+      '- Setzt Ideen um, die ich auf „Geplant“ stelle: neue Tools, neue Agenten, Verbesserungen.',
+      '- Arbeitet im privaten Repo, testet seine Änderungen und zeigt mir vorher, was er vorhat.',
+      '- Hält sich an GRUNDSAETZE.md und CLAUDE.md. Veröffentlicht nichts ohne meine Zustimmung.',
+      '- In der Stadt: die Baufirma. Ihre Kräne sind die Baustellen der geplanten Tools. Wird ein Tool fertig, steht ein neues Gebäude.',
+      '',
+      'Skill-Agent:',
+      '- Kennt einen großen Katalog an Skills, Plugins und Anbindungen (z. B. Claude-Skills, MCP-Server für Dienste wie Kalender oder Musik).',
+      '- Bekommt eine Aufgabe und sagt, welche Skills dafür am besten passen, und warum.',
+      '- Merkt sich, welche Skills sich bei mir bewährt haben, und empfiehlt diese bevorzugt.',
+      '- Arbeitet dem Developer-Agent zu: Bevor etwas gebaut wird, prüft er, ob es schon einen fertigen Skill dafür gibt.',
+      '- In der Stadt vielleicht ein Werkzeugladen neben der Baufirma.',
+      '',
+      'Ablauf: Ich spreche eine Idee ein → sie landet als Idee im Hub → ich stelle sie auf „Geplant“ → der Skill-Agent sucht passende Bausteine → der Developer-Agent baut → ich schaue drüber und gebe frei.',
+    ].join('\n'),
+    steps: [
+      { id: 's1', title: 'Skill-Katalog anlegen: welche Skills es gibt und wofür', done: false },
+      { id: 's2', title: 'Skill-Agent: Aufgabe rein, passende Skills mit Begründung raus', done: false },
+      { id: 's3', title: 'Developer-Agent: geplante Idee umsetzen, testen, zur Freigabe vorlegen', done: false },
+      { id: 's4', title: 'Baufirma und Werkzeugladen in der Stadt', done: false },
+    ],
+    link: '',
+  },
 ];
 
 export function applySeed() {
