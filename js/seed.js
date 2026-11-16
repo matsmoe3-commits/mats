@@ -97,6 +97,38 @@ const SEED = [
     ],
     link: '',
   },
+  {
+    id: 'seed-morgen-briefing',
+    title: 'Morgen-Briefing, das mit der Zeit lernt',
+    status: 'idea',
+    notes: [
+      'Jeden Morgen ein kurzer Überblick: wie warm es heute wird und was heute los ist.',
+      'Zwei Orte dafür: oben auf der Startseite des Hubs und als Nachricht aufs Handy.',
+      '',
+      'Lernen über Feedback:',
+      '- Zu jedem Punkt im Briefing kann ich mit „interessant“ oder „nicht interessant“ reagieren.',
+      '- Daraus merkt es sich, welche Themen und Quellen mir wichtig sind, und zeigt davon mehr.',
+      '- Was ich mehrmals wegklicke, kommt seltener. Ich kann jederzeit sehen und ändern, was es gelernt hat.',
+      '',
+      'Mögliche Inhalte:',
+      '- Wetter: Höchst- und Tiefstwert, Regen, ob ich eine Jacke brauche.',
+      '- Mein Tag: Termine, offene Schritte aus der Roadmap.',
+      '- Menschen: wem ich mal wieder schreiben sollte (aus dem WhatsApp-Assistenten), Firmenwechsel bei Kontakten.',
+      '- Nachrichten und Ereignisse in der Nähe, gefiltert nach dem, was ich interessant finde.',
+      '',
+      'Technik (Vorschlag):',
+      '- Wetter über Open-Meteo: kostenlos und ohne Anmeldung, der Ort kommt aus einer Einstellung oder vom Gerät.',
+      '- Morgendliche Nachricht über eine Push-Benachrichtigung der Hub-App oder per Messenger.',
+      '- Das Lernen bleibt einfach und nachvollziehbar: eine Punktzahl pro Thema, die mit jedem Feedback steigt oder sinkt.',
+    ].join('\n'),
+    steps: [
+      { id: 's1', title: 'Wetter für heute auf der Startseite anzeigen', done: false },
+      { id: 's2', title: 'Inhalte des Briefings festlegen', done: false },
+      { id: 's3', title: 'Feedback-Knöpfe und Lernen pro Thema', done: false },
+      { id: 's4', title: 'Tägliche Nachricht am Morgen aufs Handy', done: false },
+    ],
+    link: '',
+  },
 ];
 
 export function applySeed() {
