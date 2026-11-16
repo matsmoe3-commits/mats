@@ -19,7 +19,7 @@ function render(view) {
 
     <section class="section">
       <h2>Sync zwischen Geräten</h2>
-      <p class="lead">Wenn Handy und PC denselben Stand haben sollen: Die Daten landen dann als Datei in einem privaten GitHub-Repo.
+      <p class="lead">Achtung: Diese Übergangslösung schickt deine Daten unverschlüsselt an GitHub und widerspricht damit den Grundsätzen. Besser ausgeschaltet lassen, ein verschlüsselter Abgleich kommt.
         Dafür brauchst du einen <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Fine-grained Token</a>
         mit Zugriff nur auf dieses Repo und der Berechtigung „Contents: Read and write“.</p>
       <form class="form" data-sync>
