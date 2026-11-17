@@ -274,3 +274,18 @@ body[data-route="city"] .header { max-width: none; padding-left: 20px; padding-r
 .city.night .city-label span { color: #a9a3b8; }
 .city.night .city-label.active { border-color: #b3a2ee; }
 @media (max-width: 520px) { .city { height: calc(100dvh - 100px); } .city-label { padding: 4px 9px 5px; } .city-label strong { font-size: 13px; } .city-label span { display: none; } .city-label.active span { display: block; } }
+
+/* Skills */
+.skill-group { margin-top: 28px; }
+.skill-group h2 { margin-bottom: 10px; }
+.skill .row-meta .official { color: var(--lilac-ink); }
+.skill .row-meta .caution { color: var(--danger); }
+.skill.open > .row { padding-bottom: 8px; }
+.skill-detail { padding: 0 2px 16px; font-size: 15px; }
+.skill-detail p { margin: 0 0 6px; display: grid; grid-template-columns: 104px 1fr; gap: 8px; align-items: baseline; }
+.skill-detail p.caution-box { display: block; }
+.skill-detail .label { color: var(--muted); font-size: 13px; }
+.more { margin-top: 4px; }
+.caution-box { padding: 10px 12px; border-radius: var(--radius); background: color-mix(in srgb, var(--danger) 8%, transparent); color: var(--text); font-size: 14px; }
+.skills-source { margin-top: 32px; }
+@media (max-width: 520px) { .skill .row { flex-wrap: wrap; } .skill .row-meta { width: 100%; } .skill-detail p { grid-template-columns: 1fr; gap: 0; } }

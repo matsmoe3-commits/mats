@@ -16,6 +16,7 @@ Unter *Stadt* erscheinen die Tools als 3D-Gebäude in isometrischer Ansicht:
 | Ideen | Werkstatt mit Sheddach |
 | Roadmap | Rathaus mit Uhrturm |
 | Projekte | Museum |
+| Skills | Werkzeugladen |
 
 Geplante Vorhaben stehen als Baustelle mit Kran da. Gehört ein geplantes Vorhaben zu einem bestehenden Tool, steht der Kran neben dessen Gebäude. Abends leuchten die Fenster. Ein Tipp auf ein Gebäude holt es heran, ein zweiter Tipp öffnet das Tool.
 
@@ -27,6 +28,7 @@ Die Gebäude entstehen aus Code (`js/city/scene.js`), Three.js liegt in `vendor/
 - **Roadmap**: Nur Ideen mit dem Status *Geplant*, in Reihenfolge und mit abhakbaren Schritten.
 - **Projekte**: Ideen mit dem Status *Fertig*, mit Link zum Öffnen.
 - **Kontakte**: Liest deinen LinkedIn-Datenexport ein und gleicht deine Kontakte mit deinen eigenen Stationen ab. So siehst du, wer schon bei denselben Firmen war wie du. Kontakte lassen sich als *Kollege* oder *Interessant* markieren und mit Notizen versehen.
+- **Skills**: Der Skill-Agent. Du beschreibst eine Aufgabe, er nennt die passendsten Skills, Plugins und Anbindungen mit Begründung. Dazu Empfehlungen pro Idee und der ganze Katalog mit 55 ausgewählten Einträgen von GitHub (siehe `SKILLS.md`). In der Stadt ist das der Werkzeugladen.
 - **Einstellungen**: Backup als Datei und optionaler Sync über ein **privates** GitHub-Repo. Der Sync wird später durch einen bequemeren Abgleich hinter dem Login ersetzt.
 
 ## Kontakte und LinkedIn
@@ -57,6 +59,7 @@ js/app.js              Kopfzeile, Startseite, Router
 js/store.js            Datenspeicher, Export/Import, Sync
 js/ideas.js            Ideen: Datenmodell + Bearbeitungsdialog
 js/linkedin.js         LinkedIn-Export lesen (CSV/ZIP) und abgleichen
+js/skills-data.js      Skill-Katalog und Suche (Quelle für SKILLS.md)
 js/icons.js            Icons und Logo
 js/seed.js             Ideen, die der Hub einmalig mitbringt
 js/tools/              ein Modul pro Tool + index.js (Registry)

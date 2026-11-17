@@ -401,8 +401,8 @@ const SEED = [
       'Ablauf: Ich spreche eine Idee ein → sie landet als Idee im Hub → ich stelle sie auf „Geplant“ → der Skill-Agent sucht passende Bausteine → der Developer-Agent baut → ich schaue drüber und gebe frei.',
     ].join('\n'),
     steps: [
-      { id: 's1', title: 'Skill-Katalog anlegen: welche Skills es gibt und wofür', done: false },
-      { id: 's2', title: 'Skill-Agent: Aufgabe rein, passende Skills mit Begründung raus', done: false },
+      { id: 's1', title: 'Skill-Katalog anlegen: welche Skills es gibt und wofür', done: true },
+      { id: 's2', title: 'Skill-Agent: Aufgabe rein, passende Skills mit Begründung raus', done: true },
       { id: 's3', title: 'Developer-Agent: geplante Idee umsetzen, testen, zur Freigabe vorlegen', done: false },
       { id: 's4', title: 'Baufirma und Werkzeugladen in der Stadt', done: false },
       { id: 's5', title: 'Ideen-Inkubator: offene Ideen regelmäßig prüfen und Vorschläge machen', done: false },

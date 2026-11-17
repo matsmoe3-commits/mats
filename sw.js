@@ -1,6 +1,6 @@
 // Service Worker: macht den Hub offline-fähig und installierbar.
 // Strategie: Netzwerk zuerst (immer aktuelle Version), bei Offline der Cache.
-const CACHE = 'mats-hub-v5';
+const CACHE = 'mats-hub-v6';
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', 'index.html', 'css/style.css', 'js/app.js', 'icon.svg'])));

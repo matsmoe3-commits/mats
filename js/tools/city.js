@@ -5,7 +5,7 @@ import { byStatus } from '../ideas.js';
 import { esc } from '../ui.js';
 
 // Welches Tool welches Gebäude bekommt (Vorschlag aus der Idee „Startseite als Stadt“).
-const KIND = { contacts: 'tower', ideas: 'workshop', roadmap: 'townhall', projects: 'museum' };
+const KIND = { contacts: 'tower', ideas: 'workshop', roadmap: 'townhall', projects: 'museum', skills: 'shop' };
 
 let night = new Date().getHours() >= 18 || new Date().getHours() < 7;
 let city = null;

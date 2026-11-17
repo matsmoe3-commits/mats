@@ -12,6 +12,10 @@ Lies `GRUNDSAETZE.md` vor jeder Änderung. Kurzfassung:
 
 Neue Funktionen, die etwas öffentlich machen oder Dritten Zugriff geben könnten: vorher benennen und Mats fragen.
 
+## Skills und Werkzeuge
+
+Bevor du etwas neu baust: in `SKILLS.md` (bzw. `js/skills-data.js`) nachsehen, ob es einen passenden Skill, ein Plugin oder eine Anbindung gibt. Neue gute Funde dort ergänzen und `SKILLS.md` neu erzeugen. Community-Code vor dem Einsatz ansehen.
+
 ## Stil
 
 - Schlicht, wenig „KI-Look“: keine Emojis, keine Slogans, keine Gedankenstriche in UI-Texten. Akzentfarbe Helllila, sparsam einsetzen.

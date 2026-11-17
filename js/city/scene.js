@@ -191,6 +191,23 @@ function museum() {
   return { group: g, height: 15 };
 }
 
+function shop() { // Werkzeugladen: zweistöckig, Schaufenster, Markise
+  const g = new THREE.Group();
+  const fac = facade({ cols: 5, rows: 1, wall: '#c8bfae', glass: ['#9fb0b9', '#4d5c64'], frame: '#efe9de', litRatio: 0.6, glassW: 0.55, glassH: 0.6 });
+  g.add(mesh(new THREE.BoxGeometry(16, 5, 12), mat('#8a8f93', { roughness: 0.7 }), 0, 2.5, 0)); // Erdgeschoss
+  g.add(mesh(new THREE.BoxGeometry(16, 4.5, 12), windowMaterial(fac), 0, 5 + 2.25, 0)); // Obergeschoss
+  g.add(box(16.6, 0.6, 12.6, mat('#e4ddd0'), 0, 9.5, 0)); // Dachkante
+  const glass = mat('#b8cdd6', { roughness: 0.08, metalness: 0.2, transparent: true, opacity: 0.7, emissive: new THREE.Color('#ffd9a0'), emissiveIntensity: 0 });
+  g.add(box(10, 3.4, 0.2, glass, -1.5, 0.6, 6.05)); // Schaufenster
+  g.add(box(2.4, 3.8, 0.2, mat('#3a3d42', { roughness: 0.5, metalness: 0.3 }), 5.2, 0, 6.05)); // Tür
+  const awning = mat('#c4b5f4', { roughness: 0.8, side: THREE.DoubleSide }); // Markise in Helllila
+  const a = mesh(new THREE.BoxGeometry(14, 0.15, 2.4), awning, 0, 4.6, 7.1);
+  a.rotation.x = 0.35;
+  g.add(a);
+  g.add(box(9, 1.1, 0.3, mat('#1f1d22', { roughness: 0.6 }), -1.5, 4.95 - 0.55 + 0.9, 6.2)); // Schildleiste
+  return { group: g, height: 12 };
+}
+
 // Baustelle: Rohbau, Gerüst, Zaun, Kran. animate(t) dreht den Ausleger.
 function crane(height = 34, jib = 26) {
   const g = new THREE.Group();
@@ -243,7 +260,7 @@ function construction() {
   return { group: g, height: 40, crane: c };
 }
 
-const BUILDERS = { tower, workshop, townhall, museum, construction };
+const BUILDERS = { tower, workshop, townhall, museum, shop, construction };
 
 // ---------- Umgebung ----------
 
